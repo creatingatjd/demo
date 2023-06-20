@@ -1,90 +1,82 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"
-    
+    <title>Web</title>
+    <link rel="stylesheet" type="text/css" href="videos/style1.css">
 </head>
-  	<body>	
-		<div style="height: 100%; overflow-x: hidden; text-align: center">
-			<div class="csslider infinity" id="slider1">
-			<input type="radio" name="slides" checked="checked" id="slides_1"/>
-			<input type="radio" name="slides" id="slides_2"/>
-			<input type="radio" name="slides" id="slides_3"/>
-			<input type="radio" name="slides" id="slides_4"/>
-			<input type="radio" name="slides" id="slides_5"/>
-	
-				<ul>
-          <li>
-						<p>
-              <video src="blog.mp4"></video>
-              <div class="overlay"></div>
-              <div class="text">
-                <h2>Start Today</h2>
-                <h3>Believing in yourself</h3>
-            <a href="#">Explore</a>
+<body>
+    <div class="container">
+        <div class="slide-container active">
+            <div class="slide">
+                <div class="content">
+
+                    <h2> Cha cha Coffee </h2>
+                    <h3> Taste of Life</h3>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+                <video src="videos/Coffee.mp4" muted autoplay loop></video>
+            </div>
         </div>
-						</p>
-					</li>
-					<li>
-            <p>
-              <video src="travel.mp4" muted loop autoplay></video>
-            </p>
-					</li>
-					<li>
-						<p>
-              <video src="coffee.mp4" muted loop autoplay></video>
-            </p>
-					</li>
-					<li>
-						<p>
-              <video src="yoga.mp4" muted loop autoplay></video>
-            </p>
-					</li>
-					<li>
-						<p>
-              <video src="game.mp4" muted loop autoplay></video>
-            </p>
-					</li>
-					
-					<li>
-						<p>
-						<video controls preload>
-						<source src="" />
-						</video> 
-						</p>
-					</li>
-          <li>
-						<p>
-						<video controls preload>
-						<source src="" />
-						</video> 
-						</p>
-					</li>
-				</ul>
-					<div class="arrows">
-						<label for="slides_1"></label>
-						<label for="slides_2"></label>
-						<label for="slides_3"></label>
-						<label for="slides_4"></label>
-						<label for="slides_5"></label>
-						
-						<label class="goto-first" for="slides_1"></label>
-						<label class="goto-last" for="slides_5"></label>
-					</div>
-					<div class="navigation"> 
-						<div>
-							<label for="slides_1"></label>
-							<label for="slides_2"></label>
-							<label for="slides_3"></label>
-							<label for="slides_4"></label>
-							<label for="slides_5"></label>
-							
-						</div>
-					</div>
-			</div>
-		</div>
-	</body>
+        <div class="slide-container">
+            <div class="slide">
+                <div class="content">
+                    <h2> Never Stop </h2>
+                    <h3> Believing Yourself</h3>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+                <video src="videos/blog.mp4" muted autoplay loop></video>
+            </div>
+        </div>
+        <div class="slide-container">
+            <div class="slide">
+                <div class="content">
+                    <h2> Travel round and round </h2>
+                    <h3> Explore the World</h3>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+                <video src="videos/waterfall.mp4" muted autoplay loop></video>
+            </div>
+        </div>
+        <div class="slide-container">
+            <div class="slide">
+                <div class="content">
+                    <h2> Yoga With Me </h2>
+                    <h3> Trasform innserself with Yoga</h3>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+                <video src="videos/yoga.mp4" muted autoplay loop></video>
+            </div>
+        </div>
+        <div class="slide-container">
+            <div class="slide">
+                <div class="content">
+                    <h2> Be a Gamer </h2>
+                    <h3> of Life</h3>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+                <video src="videos/games.mp4" muted autoplay loop></video>
+            </div>
+        </div>
+        <div id="next" onclick="next()"> > </div>
+        <div id="prev" onclick="prev()"> < </div>
+    </div>
+    <script>
+        let slides = document.querySelectorAll('.slide-container');
+        let index = 0;
+
+        function next(){
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }
+        function prev(){
+            slides[index].classList.remove('active');
+            index = (index - 1 + slides.length) % slides.length;
+            slides[index].classList.add('active');
+        }
+    </script>
+</body>
 </html>
